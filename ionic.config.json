@@ -1,0 +1,7 @@
+{
+  "name": "timeControl",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "react"
+}
