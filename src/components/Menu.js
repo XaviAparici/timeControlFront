@@ -55,7 +55,6 @@ const Menu = () => {
 
   useEffect( () => {
     datosUsuario().then(res => {
-      console.log(res[0])
       setDatos(res[0])
     })
   },[]);

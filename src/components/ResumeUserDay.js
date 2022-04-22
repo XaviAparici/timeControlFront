@@ -4,14 +4,14 @@ import moment from "moment";
 
 const ResumeUserDay = (props) => {
 
-    const[date, setDate] = useState('')
+    const[date, setDate] = useState([])
 
     useEffect( () => {
-        //if(props.fecha){
+        if(props.fecha){
             console.log('hosfafsafaf',props.fecha)
-            // setDate(props.fecha)
-        //}
-    },[]);
+             setDate(props.fecha)
+        }
+    },[props.fecha]);
 
     return (
         <div className='grid grid-cols-1 divide-y'>
@@ -33,7 +33,7 @@ const ResumeUserDay = (props) => {
                     Fecha Inicio
                 </div>
                 <div className='text-center'>
-                    {date && moment(date[0].horaInicio).format("MM/D/YYYY HH:mm:ss")}
+                    {date.horaInicio ? moment(date.horaInicio).format("MM/D/YYYY HH:mm:ss") : '-'}
                 </div>
             </div>
             <div className='col-span-1 flex items-center justify-between p-2'>
@@ -41,7 +41,7 @@ const ResumeUserDay = (props) => {
                     Fecha Final
                 </div>
                 <div className='text-center'>
-                    {date && moment(date[date.length-1].horaFin).format("MM/D/YYYY HH:mm:ss")}
+                    {date.horaFin ? moment(date.horaFin).format("MM/D/YYYY HH:mm:ss") : '-'}
                 </div>
             </div>
             <div className='col-span-1 flex items-center justify-between p-2'>

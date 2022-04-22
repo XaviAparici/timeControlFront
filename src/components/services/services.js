@@ -10,7 +10,6 @@ export const datosUsuario = () =>{
 
         .then(res =>{           
 
-            console.log(res.data)
             return res.data
 
         })
@@ -75,8 +74,8 @@ export const getData = () =>{
         .get('http://localhost:8000/getData', {
         })
 
-        .then(res =>{           
-            return res.data
+        .then(res =>{         
+            return res.data[0]
         })
 
         .catch(err =>{
